@@ -1,0 +1,65 @@
+{
+  "name": "Brief",
+  "type": "object",
+  "properties": {
+    "input_text": {
+      "type": "string",
+      "description": "The raw input provided by the user"
+    },
+    "context_type": {
+      "type": "string",
+      "enum": ["inbox", "meeting", "strategy", "operations"],
+      "description": "The context category for the brief"
+    },
+    "executive_summary": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Max 5 bullet points summarizing the key points"
+    },
+    "key_decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "decision": { "type": "string" },
+          "options": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "description": "Clear decisions required with options"
+    },
+    "recommended_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "action": { "type": "string" },
+          "owner": { "type": "string" },
+          "priority": { "type": "string", "enum": ["high", "medium", "low"] }
+        }
+      },
+      "description": "Who should do what next"
+    },
+    "risks_blindspots": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Potential risks and blind spots identified"
+    },
+    "delegation_suggestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "task": { "type": "string" },
+          "delegate_to": { "type": "string" },
+          "reason": { "type": "string" }
+        }
+      },
+      "description": "Suggestions for task delegation"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL of uploaded file if any"
+    }
+  },
+  "required": ["input_text", "context_type"]
+}
