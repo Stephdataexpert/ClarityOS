@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
+import { apiClient } from '@/api/apiClient';
 import { motion, AnimatePresence } from 'framer-motion';
 import InputPanel from '@/components/clarity/InputPanel';
 import BriefOutput from '@/components/clarity/BriefOutput';
@@ -260,7 +260,7 @@ RULES:
 }
 =======
 import React, { useState, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
+import { apiClient } from '@/api/apiClient';
 import { motion, AnimatePresence } from 'framer-motion';
 import InputPanel from '@/components/clarity/InputPanel';
 import BriefOutput from '@/components/clarity/BriefOutput';
